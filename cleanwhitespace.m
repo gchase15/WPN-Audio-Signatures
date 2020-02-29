@@ -1,7 +1,7 @@
 clear all; close all; clc;
 % load 'Gavin_WeaponSounds/AK47/*.wav';
 
-files = dir('Gavin_WeaponSounds/AK47/*.wav') ; 
+files = dir('Gavin_WeaponSounds/FN FAL/*.wav') ; 
 
 
 minWhitespace = 5;
@@ -27,7 +27,10 @@ for i = 1:N
         if (whitespacesize == minWhitespace)
             for k=1:whitespacesize
                 data(j+1-k,:) = [];
-                test = [test data(j+1-k,1)];
+                if (j+1-k > length(data(:, 1)))
+                    break;
+                end
+                vtest = [test data(j+1-k,1)];
                 datalength = datalength - 1;
             end
             consecutiveWhitespace = [];
@@ -35,6 +38,7 @@ for i = 1:N
     end
     newFileName = split(thisfile,".");
     filename = string(newFileName(1,1));
-    newFileNameChar = filename + '_Cleaned.wav';
+    newFileNameChar = filename + 'Cleaned.wav';
     audiowrite(newFileNameChar, data, fs);
- end
+
+end
