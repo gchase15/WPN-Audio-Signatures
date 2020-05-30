@@ -125,9 +125,6 @@ legend('AK-47','FN FAL', 'M4', '50 cal')
 
 %% Classification Task
 
-band1prelda = []; band2prelda = []; band3prelda = []; band4prelda = [];
-band1prenb = []; band2prenb = []; band3prenb = []; band4prenb = [];
-band1pretree = []; band2pretree = []; band3pretree = []; band4pretree = [];
 n=100
 
 lda1 = []; lda2 = []; lda3 = []; lda4 = []; 
